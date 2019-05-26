@@ -13,8 +13,9 @@ LRESULT CALLBACK MessageHandler(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 	return DefWindowProc(hWnd, uMsg, wParam, lParam);
 }
 
-int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int nCmdShow)
+int main()
 {
+	HINSTANCE hInst = GetModuleHandle(0);
 	HWND hWnd;
 	WNDCLASS wc;
 	MSG msg;
@@ -29,7 +30,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int nCmdSho
 
 	hWnd = CreateWindow("WinApiTest", "WinApi 32", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 800, 600, 0, 0, hInst, 0);
 
-	ShowWindow(hWnd, nCmdShow);
+	ShowWindow(hWnd, 5);
 	SetForegroundWindow(hWnd);
 	SetFocus(hWnd);
 	UpdateWindow(hWnd);
